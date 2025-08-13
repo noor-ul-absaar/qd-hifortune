@@ -49,7 +49,6 @@ export function ProductsPage() {
     { name: "MOLD MACHINERY", category: "Machinery", image: "https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=400&h=300&fit=crop", description: "Advanced mold processing machinery" },
   ];
 
-  const allCategories = productCategories.flatMap(cat => cat.subcategories);
   const filteredProducts = sampleProducts.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === "all" || product.category === selectedCategory;
