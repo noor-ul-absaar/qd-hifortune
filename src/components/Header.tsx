@@ -48,7 +48,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
               </div>
             </div>
             <div>
-              <h1 className="text-lg font-bold text-primary">Qingdao Haifute</h1>
+              <h1 className="text-lg font-bold text-primary">Qingdao HiFortune</h1>
               <p className="text-sm text-muted-foreground">Rubber Machinery & Mould</p>
             </div>
           </div>

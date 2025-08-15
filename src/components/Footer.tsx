@@ -12,7 +12,7 @@ export function Footer() {
                 </div>
               </div>
               <div>
-                <h3 className="font-bold">Qingdao Haifute</h3>
+                <h3 className="font-bold">Qingdao HiFortune</h3>
                 <p className="text-sm opacity-80">Rubber Machinery & Mould</p>
               </div>
             </div>
@@ -49,7 +49,7 @@ export function Footer() {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
           <p className="text-sm opacity-80">
-            © 2025 Qingdao Haifute Rubber Machinery & Mould Co., Ltd. All rights reserved.
+            © 2025 Qingdao HiFortune Rubber Machinery & Mould Co., Ltd. All rights reserved.
           </p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
@@ -49,11 +49,11 @@ export function ProductsPage() {
     { name: "MOLD MACHINERY", category: "Machinery", image: "https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=400&h=300&fit=crop", description: "Advanced mold processing machinery" },
   ];
 
-  const filteredProducts = sampleProducts.filter(product => {
+  const filteredProducts = useMemo(() => sampleProducts.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === "all" || product.category === selectedCategory;
     return matchesSearch && matchesCategory;
-  });
+  }), [searchTerm, selectedCategory]);
 
   return (
     <div className="pt-20 min-h-screen bg-gray-50">
@@ -111,7 +111,10 @@ export function ProductsPage() {
                 <Button
                   variant={selectedCategory === "all" ? "default" : "ghost"}
                   className="w-full justify-start"
-                  onClick={() => setSelectedCategory("all")}
+                  onClick={() => {
+                     setSelectedCategory("all");
+                     setSearchTerm("");
+                  }}
                 >
                   All Products
                 </Button>
@@ -125,7 +128,7 @@ export function ProductsPage() {
                       {category.name}
                     </Button>
                     <div className="pl-4 space-y-1">
-                      {category.subcategories.slice(0, 3).map((subcat) => (
+                      {category.subcategories.map((subcat) => (
                         <button
                           key={subcat}
                           className="block w-full text-left text-sm text-muted-foreground hover:text-primary transition-colors py-1"
@@ -134,11 +137,7 @@ export function ProductsPage() {
                           {subcat}
                         </button>
                       ))}
-                      {category.subcategories.length > 3 && (
-                        <div className="text-xs text-muted-foreground">
-                          +{category.subcategories.length - 3} more
-                        </div>
-                      )}
+
                     </div>
                   </div>
                 ))}

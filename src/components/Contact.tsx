@@ -19,12 +19,12 @@ export function Contact() {
     {
       icon: <Mail className="w-6 h-6 text-primary" />,
       title: "Email",
-      details: "info@haifute.com"
+      details: "info@HiFortune.com"
     },
     {
       icon: <Globe className="w-6 h-6 text-primary" />,
       title: "Website",
-      details: "www.haifute.com"
+      details: "www.HiFortune.com"
     }
   ];
 
